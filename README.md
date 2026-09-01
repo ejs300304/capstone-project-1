@@ -14,36 +14,7 @@ Stock
 Data barang disimpan dalam bentuk list of dictionaries.
 
 Program Flow
-                    START
-                      │
-                      ▼
-                 ┌─────────┐
-                 │  LOGIN  │
-                 └────┬────┘
-                      │
-              ┌───────┴────────┐
-              │                │
-          Login Berhasil    Login Gagal
-              │                │
-              │          Maks. 3 Percobaan
-              ▼                │
-        ┌──────────────┐       │
-        │ MENU UTAMA   │◄──────┘
-        └──────┬───────┘
-               │
-      ┌────────┼────────┬────────┬────────────┐
-      ▼        ▼        ▼        ▼            ▼
-    READ     CREATE   UPDATE   DELETE     RECYCLE BIN
-      │        │        │        │            │
-      │        │        │        │       ┌────┴────┐
-      │        │        │        │       ▼         ▼
-      │        │        │        │    RESTORE   DELETE
-      │        │        │        │
-      └────────┴────────┴────────┴──────────────┐
-                                                │
-                                                ▼
-                                             EXIT
-
+                   START │ ▼ LOGIN │ ├── Login Berhasil ──► MENU UTAMA │ │ │ ├── READ │ │ │ ├── CREATE │ │ │ ├── UPDATE │ │ │ ├── DELETE │ │ │ └── RECYCLE BIN │ │ │ ├── RESTORE │ │ │ └── DELETE PERMANEN │ └── Login Gagal │ ▼ Maks. 3 Percobaan │ └── Gagal 3x → PROGRAM BERHENTI
 1. Login
 
 Sebelum masuk ke program, user harus melakukan login.
