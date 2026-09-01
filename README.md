@@ -111,3 +111,8 @@ Hapus Barang Permanen
 Kembali ke Menu Utama
 
 Barang yang di-restore akan dikembalikan ke data utama, sedangkan barang yang dihapus dari Recycle Bin akan dihapus secara permanen.
+
+Main Flow
+Secara keseluruhan, flow program adalah:
+
+Login → Menu Utama → Read / Create / Update / Delete / Recycle Bin → kembali ke Menu Utama → Exit
