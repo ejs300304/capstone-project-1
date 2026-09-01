@@ -13,6 +13,8 @@ Stock
 
 Data barang disimpan dalam bentuk list of dictionaries.
 
+FLow:
+
 1. Login
 
 Sebelum masuk ke program, user harus melakukan login.
