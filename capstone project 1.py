@@ -4,7 +4,7 @@ product = [
 {"product_id": 103, "name": "KEYBOARD", "price": 300000, "stock": 8},
 {"product_id": 104, "name": "MONITOR", "price": 2000000, "stock": 3},
 {"product_id": 105, "name": "HEADPHONE", "price": 500000, "stock": 12},
-{"product_id": 105, "name": "LAPTOP GAMING", "price": 2000000, "stock": 15}
+{"product_id": 106, "name": "LAPTOP GAMING", "price": 2000000, "stock": 15}
 ]
 
 # Code untuk mendapatkan product by ID
@@ -44,10 +44,10 @@ def menu_read():
                 print("Belum ada data barang.")
             else:
                 print("-" * 60)
-                print(f"{'ID':<5}{'Nama':<20}{'Harga':<20}{'Stock':<10}")
+                print(f"{'Product ID':<5}{'Name':<20}{'Price':<20}{'Stock':<10}")
                 print("-" * 60)
                 for item in product:
-                    print(f"{item['product_id']:<5}{item['name']:<20}Rp{item['price']:<18,}{item['stock']:<10}")
+                    print(f"{item['product_id']:<5}{item['name']:<20}Rp{item['price']:<10,}{item['stock']:<4}")
                 print("-" * 60)
         elif opsi_read == "2":
             # Menu untuk mencari data tertentu
@@ -81,10 +81,10 @@ def menu_read():
                     if len(search_result) > 0:
                         print("\n Hasil Pencarian:")
                         print("-" * 60)
-                        print(f"{'ID':<5}{'Nama':<20}{'Harga':<20}{'Stock':<10}")
+                        print(f"{'Product ID':<5}{'Name':<20}{'Price':<20}{'Stock':<10}")
                         print("-" * 60)
                         for item in search_result:
-                            print(f"{item['product_id']:<5}{item['name']:<20}Rp{item['price']:<18,}{item['stock']:<10}")
+                            print(f"{item['product_id']:<5}{item['name']:<20}Rp{item['price']:<10,}{item['stock']:<4}")
                         print("-" * 60)
                     else:
                         print("Barang dengan nama tersebut tidak ditemukan.")
@@ -314,10 +314,10 @@ def trash_cart():
                 print("Cart kosong.")
             else:
                 print("-" * 60)
-                print(f"{'ID':<5}{'Nama':<20}{'Harga':<20}{'Stock':<10}")
+                print(f"{'Product ID':<5}{'Name':<20}{'Price':<20}{'Stock':<10}")
                 print("-" * 60)
                 for item in cart:
-                    print(f"{item['product_id']:<5}{item['name']:<20}Rp{item['price']:<18,}{item['stock']:<10}")
+                    print(f"{item['product_id']:<5}{item['name']:<20}Rp{item['price']:<10,}{item['stock']:<4}")
                 print("-" * 60)
         elif opsi_trash == "2":
             if len(cart) == 0:
