@@ -92,8 +92,8 @@ def menu_read():
                     print("Kriteria pencarian tidak valid.")
                     continue
 
-                cari_lagi = input("Cari lagi? (Y/N): ").upper()
-                if cari_lagi != "Y":
+                search_again = input("Cari lagi? (Y/N): ").upper()
+                if search_again != "Y":
                     break
         elif opsi_read == "3":
             break
@@ -128,7 +128,7 @@ def menu_create():
                     name = name.upper()
                     # Fitur Validasi Nama Duplikat
                     if any(p["name"] == name for p in product):
-                        print(f"Barang dengan nama '{name}' sudah ada di dalam database. Gunakan nama yang berbeda!")
+                        print(f"Barang dengan nama '{name}' sudah ada di dalam database. Gunakan nama yang berbeda")
                     else:
                         break
 
@@ -158,7 +158,7 @@ def menu_create():
             simpan = input("Simpan data? (Y/N): ").upper()
             if simpan == "Y":
                 product.append({"product_id": product_id, "name": name, "price": price, "stock": stock})
-                print(f"Data product '{name}' berhasil disimpan!")
+                print(f"Data product '{name}' berhasil disimpan")
             else:
                 print("Data batal disimpan.")
         elif opsi_create == "2":
@@ -183,8 +183,8 @@ def menu_update():
                 found_product = find_product(product_id)
                 if not found_product:
                     print("Product ID tidak ditemukan.")
-                    cari_lagi = input("Cari lagi? (Y/N): ").upper()
-                    if cari_lagi != "Y":
+                    search_again = input("Cari lagi? (Y/N): ").upper()
+                    if search_again != "Y":
                         break
                     continue
 
@@ -247,7 +247,7 @@ def menu_update():
                 confirm = input("Update data? (Y/N): ").upper()
                 if confirm == "Y":
                     found_product[field_name] = new_val
-                    print("Update data berhasil!")
+                    print("Update berhasil")
                 else:
                     print("Update dibatalkan.")
                 break
@@ -275,8 +275,8 @@ def menu_delete():
 
                 if not found_product:
                     print("Product ID tidak ditemukan.")
-                    cari_lagi = input("Cari lagi? (Y/N): ").upper()
-                    if cari_lagi != "Y":
+                    search_again = input("Cari lagi? (Y/N): ").upper()
+                    if search_again != "Y":
                         break
                     continue
 
@@ -290,7 +290,7 @@ def menu_delete():
                 if confirm == "Y":
                     cart.append(found_product)
                     product.remove(found_product)
-                    print(f"Product ID {product_id} berhasil dipindahkan ke Cart Hapus!")
+                    print(f"Product ID {product_id} berhasil dipindahkan ke Cart Hapus")
                 else:
                     print("Penghapusan dibatalkan.")
                 break
@@ -338,7 +338,7 @@ def trash_cart():
             if found_trash:
                 product.append(found_trash)
                 cart.remove(found_trash)
-                print(f"Product '{found_trash['name']}' berhasil dikembalikan ke list utama!")
+                print(f"Product '{found_trash['name']}' berhasil dikembalikan ke list utama")
             else:
                 print("Product ID tidak ditemukan di dalam Cart.")
 
@@ -358,8 +358,8 @@ def trash_cart():
                     break
 
             if found_trash:
-                yakin = input(f"Yakin ingin menghapus {found_trash['name']} permanen? (Y/N): ").upper()
-                if yakin == "Y":
+                confirm = input(f"Yakin ingin menghapus {found_trash['name']} permanen? (Y/N): ").upper()
+                if confirm == "Y":
                     cart.remove(found_trash)
                     print("Barang berhasil dihapus permanen!")
                 else:
